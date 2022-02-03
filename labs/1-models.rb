@@ -13,7 +13,50 @@ Contact.destroy_all
 
 # 2. create 1-2 new contacts for each company (they can be made up)
 
+values = {
+    first_name: "Andy",
+    last_name: "Jassy",
+    email: "andy@amazon.com",
+    company_id: "2"
+}
+
+contacts = Contact.new(values)
+contacts.save
+
+values = {
+    first_name: "Craig",
+    last_name: "Federighi",
+    email: "craig@apple.com",
+    company_id: "1"
+}
+
+contacts = Contact.new(values)
+contacts.save
+
+values = {
+    first_name: "Elon",
+    last_name: "Musk",
+    email: "elon@tesla.com",
+    company_id: "3"
+}
+
+contacts = Contact.new(values)
+contacts.save
+
+values = {
+    first_name: "Tim",
+    last_name: "Cook",
+    email: "tim@apple.com",
+    company_id: "1"
+}
+
+contacts = Contact.new(values)
+contacts.save
+
+
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
+
+puts "There are #{Contact.all.count} contacts"
 
 # ---------------------------------
 # Contacts: 4

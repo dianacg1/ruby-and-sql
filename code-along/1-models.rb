@@ -55,7 +55,7 @@ puts "There are #{Company.all.count} companies"
 #puts companies.inspect
 
 #puts Company.where({state:"CA",name:"Apple"}).count
-apple = Company.where({state:"CA",name:"Apple"})[0]
+#apple = Company.where({state:"CA",name:"Apple"})[0]
 #puts apple.inspect
 
 # 4. read column values from row
@@ -70,3 +70,8 @@ apple.slogan = "Think Different."
 apple.save
 
 puts apple.inspect
+
+tesler = Company.new({name: "Tesler"})
+tesler.save
+
+tesler.destroy
