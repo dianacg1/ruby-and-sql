@@ -11,13 +11,18 @@ Contact.destroy_all
 # 1a. check out the schema file
 # 1b. check out the model file
 
+apple = Company.where({name:"Apple"})[0]
+amazon = Company.where({name:"Amazon"})[0]
+tesla = Company.where({name:"Tesla"})[0]
+
 # 2. create 1-2 new contacts for each company (they can be made up)
 
 values = {
     first_name: "Andy",
     last_name: "Jassy",
     email: "andy@amazon.com",
-    company_id: "2"
+    phone_number: "777-777-7777",
+    company_id: amazon.id
 }
 
 contacts = Contact.new(values)
@@ -27,7 +32,8 @@ values = {
     first_name: "Craig",
     last_name: "Federighi",
     email: "craig@apple.com",
-    company_id: "1"
+    phone_number: "777-777-7777",
+    company_id: apple.id
 }
 
 contacts = Contact.new(values)
@@ -37,7 +43,8 @@ values = {
     first_name: "Elon",
     last_name: "Musk",
     email: "elon@tesla.com",
-    company_id: "3"
+    phone_number: "777-777-7777",
+    company_id: tesla.id
 }
 
 contacts = Contact.new(values)
@@ -47,16 +54,24 @@ values = {
     first_name: "Tim",
     last_name: "Cook",
     email: "tim@apple.com",
-    company_id: "1"
+    phone_number: "777-777-7777",
+    company_id: apple.id
 }
 
 contacts = Contact.new(values)
 contacts.save
 
 
+
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
 
 puts "There are #{Contact.all.count} contacts"
+
+puts "Contacts: #{Contact.all.count}"
+contacts = Contact.all
+for contact in contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+end
 
 # ---------------------------------
 # Contacts: 4

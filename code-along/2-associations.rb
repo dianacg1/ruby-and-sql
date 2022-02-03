@@ -5,6 +5,13 @@
 
 # 1. Query all of the contacts at Apple Inc.
 
+apple = Company.where({name:"Apple"})[0]
+
 # 2. add association to contacts in Company model
+
+contacts = apple.contacts
+for contact in contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+end
 
 # 3. add association to company in Contact model
