@@ -8,9 +8,10 @@
 puts "There are #{Contact.all.count} contacts"
 
 puts "Contacts: #{Contact.all.count}"
+
 contacts = Contact.all
 for contact in contacts
-    puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.email} - #{contact.company.name}"
 end
 
 # ---------------------------------
@@ -23,10 +24,29 @@ end
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
 
 for company in Company.all
+    puts "____"
     puts company.name
     for contact in company.contacts
         puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
     end
+end
+
+puts ""
+
+for company in Company.all
+    puts company.name
+    puts ""
+end
+
+puts ""
+
+for company in Company.all
+    puts company.name
+    contacts = company.contacts
+    for contact in contacts
+        puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+    end
+    puts ""
 end
 
 # ---------------------------------
