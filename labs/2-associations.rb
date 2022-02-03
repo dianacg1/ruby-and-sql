@@ -23,6 +23,7 @@ end
 
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
 
+#What we did
 for company in Company.all
     puts "____"
     puts company.name
@@ -33,6 +34,7 @@ end
 
 puts ""
 
+#only getting company names
 for company in Company.all
     puts company.name
     puts ""
@@ -40,6 +42,7 @@ end
 
 puts ""
 
+#Professor solutions
 for company in Company.all
     puts company.name
     contacts = company.contacts
